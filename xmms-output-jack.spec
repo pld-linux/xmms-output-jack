@@ -10,7 +10,10 @@ Group:		X11/Applications/Sound
 Source0:	%{_rnam}-%{version}-%{_snap}.tar.bz2
 # Source0-md5:	e3eb3b37e63b2c6beb68a6cdfc1e746b
 URL:		http://xmms-jack.sf.net/
+BuildRequires:	autoconf
+BuildRequires:	automake
 BuildRequires:	jack-audio-connection-kit-devel
+BuildRequires:	libtool
 BuildRequires:	xmms-devel >= 1.2.7
 Requires:	xmms
 Provides:	xmms-output-plugin
@@ -32,7 +35,7 @@ Ta wtyczka pozwala xmms-owi odtwarzaæ muzykê poprzez JACKa.
 %{__autoheader}
 %{__automake}
 %configure \
-    --disable-static
+	--disable-static
 %{__make}
 
 %install
@@ -42,10 +45,12 @@ rm -rf $RPM_BUILD_ROOT
 	DESTDIR=$RPM_BUILD_ROOT \
 	libdir=%{xmms_output_plugindir}
 
+rm -f $RPM_BUILD_ROOT%{xmms_output_plugindir}/*.la
+
 %clean
 rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
 %doc AUTHORS ChangeLog NEWS README
-%attr(755,root,root) %{xmms_output_plugindir}/*
+%attr(755,root,root) %{xmms_output_plugindir}/*.so
