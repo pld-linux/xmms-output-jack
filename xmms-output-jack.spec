@@ -1,13 +1,13 @@
-%define		_rnam xmms-jack
 Summary:	JACK output plugin for XMMS
 Summary(pl):	Wtyczka wyj¶ciowa dla XMMS-a odtwarzaj±ca d¼wiêk przez JACK-a
 Name:		xmms-output-jack
-Version:	0.10
+Version:	0.11
 Release:	1
 License:	GPL v2
 Group:		X11/Applications/Sound
+%define		_rnam	xmms-jack
 Source0:	http://dl.sourceforge.net/xmms-jack/%{_rnam}-%{version}.tar.gz
-# Source0-md5:	40ab4a8c5929eda9c6547faa624686c7
+# Source0-md5:	d2a79a8edc620053dc166a003cf05585
 URL:		http://xmms-jack.sf.net/
 BuildRequires:	autoconf
 BuildRequires:	automake
@@ -25,7 +25,7 @@ This plugin allows XMMS to play sounds though JACK.
 Ta wtyczka pozwala XMMS-owi odtwarzaæ muzykê poprzez JACK-a.
 
 %prep
-%setup -qn %{_rnam}
+%setup -q -n %{_rnam}
 
 %build
 %{__libtoolize}
