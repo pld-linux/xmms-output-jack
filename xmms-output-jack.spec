@@ -1,6 +1,6 @@
 %define		_rnam xmms-jack
 Summary:	JACK output plugin for XMMS
-Summary(pl):	Wtyczka dla XMMSa odtwarzaj±ca d¼wiêk przez JACKa
+Summary(pl):	Wtyczka dla XMMS-a odtwarzaj±ca d¼wiêk przez JACKa
 Name:		xmms-output-jack
 Version:	0.9
 Release:	1
